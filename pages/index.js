@@ -1,10 +1,13 @@
 import Link from 'next/link';
+import OrderItems from '../components/orderItems';
 
 export default () => (
   <div>
-    <div className="border-2 border-red-500 flex justify-center">
+    <div className="border-2 border-red-500 grid grid-rows-1 grid-flow-col">
       <div className="border-2 border-blue-500 bg-gray-50">
-        <div className="border-2 border-green-500 h-96 w-96 p-7">
+        Left
+        {/****************************************** LEFT COLUMN ******************************************/}
+        <div className="border-2 border-green-500 h-96 p-7">
           <h2>Contact information</h2>
           <form action="#" method="POST">
             <div class="divide-y divide-gray-200 divide-solid">
@@ -33,10 +36,19 @@ export default () => (
         </div>
       </div>
       <div className="border-2 border-yellow-600">
-        <div className="border-2 border-red-300">
-          Right Column
+        <div className="border-2 border-red-300 bg-gray-50">
+          Right
+          {/****************************************** RIGHT COLUMN ******************************************/}
+          <div className="border-2 border-green-500 h-96 p-7">
+            <h2>Order summary</h2>
+            <div className="rounded-md bg-white h-96 border border-gray-200">
+              <OrderItems />
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 );
+
+
