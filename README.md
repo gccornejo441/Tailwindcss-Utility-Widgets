@@ -9,4 +9,4 @@ Aim for practicing good accessiblity practices in your code by utilizing respons
  - https://developer.mozilla.org/en-US/docs/Learn/Accessibility
 
 Ecommerce
-- Checkout Formm
+- Checkout Form
