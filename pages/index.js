@@ -9,7 +9,7 @@ export default () => (
         Left
         {/****************************************** LEFT COLUMN ******************************************/}
         <div className="border-2 border-green-500">
-          <h2 className="text-2xl font-semibold" >Contact information</h2>
+          <h2 className="text-lg font-semibold" >Contact information</h2>
           <form action="#" method="POST">
             <div class="divide-y divide-gray-200 divide-solid">
               <div className="py-5">
@@ -87,6 +87,64 @@ export default () => (
                 Phone
               </label>
               <input className="p-1 w-full mt-1 focus:ring-gray-400 focus:border-gray-400 block border border-gray-300 rounded-md" name="phone" id="phone" type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" />
+            </div>
+            <hr className="my-5"/>
+            <div>
+              <span>
+                <h2 className="font-medium text-lg text-gray-700 mb-5">Delivery method</h2>
+              </span>
+              <ul className="grid grid-rows-1 grid-flow-col gap-4">
+                <li>
+                  <div className="border border-gray-300 rounded-md p-3">
+                    <ul>
+                      <li className="block text-gray-700 text-sm font-semibold">Standard</li>
+                      <li className="block text-gray-500 text-sm font-normal">4-10 business days</li>
+                      <li className="mt-4 text-gray-700 text-sm font-semibold">$5.00</li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                <div className="border border-gray-300 rounded-md p-3">
+                    <ul>
+                      <li className="block text-gray-700 text-sm font-semibold">Express</li>
+                      <li className="block text-gray-500 text-sm font-normal">2-5 business days</li>
+                      <li className="mt-4 text-gray-700 text-sm font-semibold">$16.00</li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <hr className="my-10"/>
+            <div>
+              <span>
+                <h2 className="font-medium text-lg text-gray-700">Payment</h2>
+                <ul>
+                  <li>
+                    <div>
+                      <ul className="flex">
+                        <li className="mr-8">
+                          <label className="text-gray-700 text-sm font-semibold ">
+                          <input className="form-radio" type="radio" name="radio-direct" value="credit" />
+                            <span class="ml-2">Credit Card</span>
+                          </label>
+                        </li>
+                        <li className="mr-8">
+                          <label className="text-gray-700 text-sm font-semibold ">
+                          <input className="form-radio" type="radio" name="radio-direct" value="paypal" />
+                            <span class="ml-2">PayPal</span>
+                          </label>
+                        </li>
+                        <li className="mr-8">
+                          <label className="text-gray-700 text-sm font-semibold ">
+                          <input className="form-radio text-red-500 border-0" type="radio" name="radio-direct" value="etransfer" />
+                            <span class="ml-2">eTransfer</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </span>
             </div>
           </form>
         </div>
