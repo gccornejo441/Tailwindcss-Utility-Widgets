@@ -13,13 +13,12 @@ const Index = () => {
 
   return (
     <div class="mt-24">
-      <div className="border border-gray-200 bg-gray-100 flex max-w-screen-xl mx-auto rounded-md">
-        <div className="border-2 border-blue-500 bg-gray-50 w-1/2 m-7">
-          Left
+      <div className="border border-gray-200 bg-gray-200 flex flex-col md:flex md:flex-row max-w-screen-xl mx-auto rounded-md">
+        <div className="md:w-1/2 m-7">
           {/****************************************** LEFT COLUMN ******************************************/}
-          <div className="border-2 border-green-500">
+          <div className="flex flex-col md:flex md:flex-col">
             <span>
-              <h2 className="font-medium text-lg text-gray-700">Contact information</h2>
+              <h2 className="font-medium text-lg text-gray-800">Contact information</h2>
             </span>
             <form onSubmit={e => e.preventDefault()} method="POST">
               <div>
@@ -31,9 +30,9 @@ const Index = () => {
                 </div>
                 <hr className="my-5" />
                 <span>
-                  <h2 className="font-medium text-lg text-gray-700 mb-5">Shipping information</h2>
+                  <h2 className="font-medium text-lg text-gray-800 mb-5">Shipping information</h2>
                 </span>
-                <div className="pb-5 grid grid-rows-1 grid-flow-col gap-4">
+                <div className="pb-5 flex flex-col md:grid md:grid-rows-2 lg:grid-rows-1 md:grid-flow-col md:gap-4">
                   <div class="flex flex-col w-auto">
                     <label forHtml="firstName" className="block text-gray-700 text-sm font-semibold mb-2">
                       First name
@@ -66,7 +65,7 @@ const Index = () => {
                 </label>
                 <input className="p-1 w-full mt-1 focus:ring-gray-400 focus:border-gray-400 block border border-gray-300 rounded-md" name="apartment" id="apartment" type="text" />
               </div>
-              <div className="pb-5 grid grid-rows-1 grid-flow-col gap-4">
+              <div className="pb-5 flex flex-col md:grid md:grid-rows-1 md:grid-flow-col gap-4">
                 <div class="flex flex-col">
                   <label forHtml="city" className="block text-gray-700 text-sm font-semibold mb-2">
                     City
@@ -83,7 +82,7 @@ const Index = () => {
                   </select>
                 </div>
               </div>
-              <div className="pb-5 grid grid-rows-1 grid-flow-col gap-4">
+              <div className="pb-5 flex flex-col md:grid md:grid-rows-2 lg:grid-rows-1 md:grid-flow-col gap-4">
                 <div class="flex flex-col w-auto">
                   <label forHtml="province" className="block text-gray-700 text-sm font-semibold mb-2">
                     Province
@@ -106,13 +105,13 @@ const Index = () => {
               <hr className="my-5" />
               <div>
                 <span>
-                  <h2 className="font-medium text-lg text-gray-700 mb-5">Delivery method</h2>
+                  <h2 className="font-medium text-lg text-gray-800 mb-5">Delivery method</h2>
                 </span>
                 <ul className="grid grid-rows-1 grid-flow-col gap-4">
                   <li>
-                    <button ref={toggleSwitch} onClick={toggleComp()} className="border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-green-600 text-left w-full group focus:text-yellow-300">
+                    <button ref={toggleSwitch} onClick={toggleComp()} className="border border-gray-300 bg-white rounded-md p-3 focus:ring-2 focus:ring-green-600 text-left w-full group">
                       <ul>
-                        <li className="block text-gray-700 text-sm font-semibold flex justify-between group-focus:text-green-600">Standard
+                        <li className="block text-gray-700 text-sm font-semibold flex justify-between">Standard
                           <CheckCircleIcon className="w-5 h-5 group-focus:text-green-600" />
                         </li>
                         <li className="block text-gray-500 text-sm font-normal">4-10 business days</li>
@@ -121,9 +120,9 @@ const Index = () => {
                     </button>
                   </li>
                   <li>
-                    <button className="border border-gray-300 rounded-md p-3 focus:ring-2 focus:ring-green-600 text-left w-full">
+                    <button className="border border-gray-300 bg-white rounded-md p-3 focus:ring-2 focus:ring-green-600 text-left w-full group">
                       <ul>
-                        <li className="block text-gray-700 text-sm font-semibold flex justify-between group-focus:text-green-600">Express
+                        <li className="block text-gray-700 text-sm font-semibold flex justify-between">Express
                           <CheckCircleIcon className="w-5 h-5 group-focus:text-green-600" />
                         </li>
                         <li className="block text-gray-500 text-sm font-normal">2-5 business days</li>
@@ -136,7 +135,7 @@ const Index = () => {
               <hr className="my-10" />
               <div>
                 <span>
-                  <h2 className="font-medium text-lg text-gray-700">Payment</h2>
+                  <h2 className="font-medium text-lg text-gray-800">Payment</h2>
                   <ul>
                     <li>
                       <div>
@@ -168,12 +167,13 @@ const Index = () => {
             </form>
           </div>
         </div>
-        <div className="border-2 border-yellow-600 w-1/2">
-          <div className="border-2 border-blue-600 bg-gray-50">
-            Right
+        <div className="md:w-3/5">
+          <div>
             {/****************************************** RIGHT COLUMN ******************************************/}
-            <div className="border-2 border-green-500 p-7">
-              <h2 className="mb-5 text-lg font-semibold text-gray-800">Order summary</h2>
+            <div className="p-7 md:p-3 lg:p-7">
+              <span>
+                <h2 className="font-medium text-lg text-gray-800 mb-5">Order summary</h2>
+              </span>
               <div className="rounded-md bg-white border border-gray-200 h-full">
                 <OrderItems />
                 <Service />
