@@ -6,8 +6,9 @@ module.exports = {
   },
   variants: {
     extend: {
-      textDecoration: ['focus-visible'],
+      textColor: ['group-focus'],
       backgroundColor: ['group-focus'],
+      scale: ['focus-within'],
     },
   },
   plugins: [
