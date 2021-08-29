@@ -36,9 +36,9 @@ const OrderItems = () => {
                                 <li className="flex flex-row-reverse">
                                     <TrashIcon className="w-5 h-5 text-gray-400" />
                                 </li>
-                                <li className="">
-                                    <form action="#" method="POST" className="grid grid-rows-1 border border-gray-300 rounded-md px-1">
-                                        <select name="numberOfItems" id="numberOfItems" className="text-sm text-gray-600 py-1 pr-3">
+                                <li>
+                                    <form action="#" method="POST" className="grid grid-rows-1 rounded-md">
+                                        <select name="numberOfItems" id="numberOfItems" className="border-transparent focus:border-gray-500 focus:ring-0 text-sm text-gray-600 form-select block w-full rounded-md border border-gray-300">
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>

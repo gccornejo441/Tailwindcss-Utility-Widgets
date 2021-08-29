@@ -5,7 +5,10 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: {
+      textDecoration: ['focus-visible'],
+      backgroundColor: ['group-focus'],
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),

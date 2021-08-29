@@ -10,7 +10,7 @@ export default () => (
         {/****************************************** LEFT COLUMN ******************************************/}
         <div className="border-2 border-green-500">
           <h2 className="text-lg font-semibold" >Contact information</h2>
-          <form action="#" method="POST">
+          <form onSubmit={e => e.preventDefault()} method="POST">
             <div class="divide-y divide-gray-200 divide-solid">
               <div className="py-5">
                 <label forHtml="email" className="block text-gray-700 text-sm font-semibold mb-2">
@@ -95,13 +95,13 @@ export default () => (
               </span>
               <ul className="grid grid-rows-1 grid-flow-col gap-4">
                 <li>
-                  <div className="border border-gray-300 rounded-md p-3">
+                  <button className="border border-gray-300 rounded-md p-3 group focus:bg-yellow-600 ">
                     <ul>
-                      <li className="block text-gray-700 text-sm font-semibold">Standard</li>
+                      <li className="block text-gray-700 text-sm font-semibold group-focus:text-yellow-300">Standard</li>
                       <li className="block text-gray-500 text-sm font-normal">4-10 business days</li>
                       <li className="mt-4 text-gray-700 text-sm font-semibold">$5.00</li>
                     </ul>
-                  </div>
+                  </button>
                 </li>
                 <li>
                 <div className="border border-gray-300 rounded-md p-3">
