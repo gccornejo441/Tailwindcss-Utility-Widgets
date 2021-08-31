@@ -1,14 +1,40 @@
-import React, { useEffect, useRef } from "react";
+import React, {useState } from "react";
 import OrderItems from '../components/orderItems';
 import Service from '../components/service';
 import { CheckCircleIcon } from '@heroicons/react/solid';
 
 const Index = () => {
+  const standard = {borderColor: "#D1D5DB", borderWidth: ""}; 
+  const express = {borderColor: "#D1D5DB", borderWidth: ""}; 
 
-  const toggleSwitch = useRef();
+  const [standardStyle, setStandardStyle] = useState(standard);
+  const [expressStyle, setExpressStyle] = useState(express);
 
-  const toggleComp = () => {
-    console.log(toggleSwitch.current);
+
+  const toggleStandard = (e) => {
+    e.preventDefault();
+    console.log(e)
+    if(standardStyle.borderColor == "#D1D5DB" && expressStyle.borderColor == "#D1D5DB"){
+      setStandardStyle({borderColor: "#059669", borderWidth: "2px"});
+    } else if (standardStyle.borderColor == "#059669" && expressStyle.borderColor == "#D1D5DB") {
+      setStandardStyle({borderColor: "#D1D5DB", borderWidth: ""});
+    } else if (standardStyle.borderColor == "#D1D5DB" && expressStyle.borderColor == "#059669") {
+      setStandardStyle({borderColor: "#059669", borderWidth: "2px"});
+      setExpressStyle({borderColor: "#D1D5DB", borderWidth: ""});
+    }
+  }
+
+  const toggleExpress = (e) => {
+    e.preventDefault();
+    console.log(e)
+    if(standardStyle.borderColor == "#D1D5DB" && expressStyle.borderColor == "#D1D5DB"){
+      setExpressStyle({borderColor: "#059669", borderWidth: "2px"});
+    } else if (standardStyle.borderColor == "#D1D5DB" && expressStyle.borderColor == "#059669") {
+      setExpressStyle({borderColor: "#D1D5DB", borderWidth: ""});
+    } else if (standardStyle.borderColor == "#059669" && expressStyle.borderColor == "#D1D5DB") {
+      setExpressStyle({borderColor: "#059669", borderWidth: "2px"});
+      setStandardStyle({borderColor: "#D1D5DB", borderWidth: ""});
+    }
   }
 
   return (
@@ -109,10 +135,10 @@ const Index = () => {
                 </span>
                 <ul className="grid grid-rows-1 grid-flow-col gap-4">
                   <li>
-                    <button ref={toggleSwitch} onClick={toggleComp()} className="border border-gray-300 bg-white rounded-md p-3 focus:ring-2 focus:ring-green-600 text-left w-full group">
+                    <button onClick={e => toggleStandard(e)} style={{borderColor: standardStyle.borderColor, borderWidth: standardStyle.borderWidth}} className="border border-gray-300 bg-white rounded-md p-3 text-left w-full group">
                       <ul>
                         <li className="block text-gray-700 text-sm font-semibold flex justify-between">Standard
-                          <CheckCircleIcon className="w-5 h-5 group-focus:text-green-600" />
+                          <CheckCircleIcon className="w-5 h-5"  style={{color: standardStyle.borderColor}} />
                         </li>
                         <li className="block text-gray-500 text-sm font-normal">4-10 business days</li>
                         <li className="mt-4 text-gray-700 text-sm font-semibold">$5.00</li>
@@ -120,10 +146,10 @@ const Index = () => {
                     </button>
                   </li>
                   <li>
-                    <button className="border border-gray-300 bg-white rounded-md p-3 focus:ring-2 focus:ring-green-600 text-left w-full group">
+                    <button onClick={e => toggleExpress(e)} style={{borderColor: expressStyle.borderColor, borderWidth: expressStyle.borderWidth}} className="border border-gray-300 bg-white rounded-md p-3 text-left w-full group">
                       <ul>
                         <li className="block text-gray-700 text-sm font-semibold flex justify-between">Express
-                          <CheckCircleIcon className="w-5 h-5 group-focus:text-green-600" />
+                          <CheckCircleIcon className="w-5 h-5"  style={{color: expressStyle.borderColor}} />
                         </li>
                         <li className="block text-gray-500 text-sm font-normal">2-5 business days</li>
                         <li className="mt-4 text-gray-700 text-sm font-semibold">$16.00</li>
@@ -132,36 +158,32 @@ const Index = () => {
                   </li>
                 </ul>
               </div>
-              <hr className="my-10" />
+              <hr className="bg-green-500 my-10" />
               <div>
                 <span>
                   <h2 className="font-medium text-lg text-gray-800">Payment</h2>
-                  <ul>
-                    <li>
-                      <div>
-                        <ul className="flex">
-                          <li className="mr-8">
-                            <label className="text-gray-700 text-sm font-semibold ">
-                              <input className="form-radio" type="radio" name="radio-direct" value="credit" />
-                              <span class="ml-2">Credit Card</span>
-                            </label>
-                          </li>
-                          <li className="mr-8">
-                            <label className="text-gray-700 text-sm font-semibold ">
-                              <input className="form-radio" type="radio" name="radio-direct" value="paypal" />
-                              <span class="ml-2">PayPal</span>
-                            </label>
-                          </li>
-                          <li className="mr-8">
-                            <label className="text-gray-700 text-sm font-semibold ">
-                              <input className="form-radio text-red-500 border-0" type="radio" name="radio-direct" value="etransfer" />
-                              <span class="ml-2">eTransfer</span>
-                            </label>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                  </ul>
+                  <div>
+                    <ul className="flex">
+                      <li className="mr-8">
+                        <label className="text-gray-700 text-sm font-semibold ">
+                          <input className="border-transparent focus:ring-0 form-radio text-green-500" type="radio" name="radio-direct" value="credit" />
+                          <span class="ml-2">Credit Card</span>
+                        </label>
+                      </li>
+                      <li className="mr-8">
+                        <label className="text-gray-700 text-sm font-semibold ">
+                          <input className="border-transparent focus:ring-0 form-radio text-green-500" type="radio" name="radio-direct" value="paypal" />
+                          <span class="ml-2">PayPal</span>
+                        </label>
+                      </li>
+                      <li className="mr-8">
+                        <label className="text-gray-700 text-sm font-semibold ">
+                          <input className="border-transparent focus:ring-0 form-radio text-green-500" type="radio" name="radio-direct" value="etransfer" />
+                          <span class="ml-2">eTransfer</span>
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
                 </span>
               </div>
             </form>

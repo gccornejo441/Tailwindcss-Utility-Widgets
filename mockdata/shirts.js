@@ -2,7 +2,7 @@ export const shirts = [
     {
       _id: 1,
       shirt_type: "Basic Tee",
-      color: "Black",
+      color: "Navy Blue",
       size: "Large",
       price: "$32.00",
       image: "./stockPhoto1.jpg"
@@ -10,9 +10,9 @@ export const shirts = [
     {
       _id: 2,
       shirt_type: "Basic Tee",
-      color: "Sienna",
+      color: "Black",
       size: "Large",
       price: "$32.00",
-      image: "./stockPhoto1.jpg"
+      image: "./stockPhoto2.jpg"
     }
   ];
