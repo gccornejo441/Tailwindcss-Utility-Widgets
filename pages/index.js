@@ -1,11 +1,14 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import OrderItems from '../components/orderItems';
 import Service from '../components/service';
 import { CheckCircleIcon } from '@heroicons/react/solid';
 
 const Index = () => {
-  const standard = {borderColor: "#D1D5DB", borderWidth: ""}; 
-  const express = {borderColor: "#D1D5DB", borderWidth: ""}; 
+  const GREEN_600 = "#059669";
+  const GRAY_300 = "#D1D5DB";
+
+  const standard = {borderColor: GRAY_300, borderWidth: ""}; 
+  const express = {borderColor: GRAY_300, borderWidth: ""}; 
 
   const [standardStyle, setStandardStyle] = useState(standard);
   const [expressStyle, setExpressStyle] = useState(express);
@@ -14,26 +17,26 @@ const Index = () => {
   const toggleStandard = (e) => {
     e.preventDefault();
     console.log(e)
-    if(standardStyle.borderColor == "#D1D5DB" && expressStyle.borderColor == "#D1D5DB"){
-      setStandardStyle({borderColor: "#059669", borderWidth: "2px"});
-    } else if (standardStyle.borderColor == "#059669" && expressStyle.borderColor == "#D1D5DB") {
-      setStandardStyle({borderColor: "#D1D5DB", borderWidth: ""});
-    } else if (standardStyle.borderColor == "#D1D5DB" && expressStyle.borderColor == "#059669") {
-      setStandardStyle({borderColor: "#059669", borderWidth: "2px"});
-      setExpressStyle({borderColor: "#D1D5DB", borderWidth: ""});
+    if(standardStyle.borderColor == GRAY_300 && expressStyle.borderColor == GRAY_300){
+      setStandardStyle({borderColor: GREEN_600, borderWidth: "2px"});
+    } else if (standardStyle.borderColor == GREEN_600 && expressStyle.borderColor == GRAY_300) {
+      setStandardStyle({borderColor: GRAY_300, borderWidth: ""});
+    } else if (standardStyle.borderColor == GRAY_300 && expressStyle.borderColor == GREEN_600) {
+      setStandardStyle({borderColor: GREEN_600, borderWidth: "2px"});
+      setExpressStyle({borderColor: GRAY_300, borderWidth: ""});
     }
   }
 
   const toggleExpress = (e) => {
     e.preventDefault();
     console.log(e)
-    if(standardStyle.borderColor == "#D1D5DB" && expressStyle.borderColor == "#D1D5DB"){
-      setExpressStyle({borderColor: "#059669", borderWidth: "2px"});
-    } else if (standardStyle.borderColor == "#D1D5DB" && expressStyle.borderColor == "#059669") {
-      setExpressStyle({borderColor: "#D1D5DB", borderWidth: ""});
-    } else if (standardStyle.borderColor == "#059669" && expressStyle.borderColor == "#D1D5DB") {
-      setExpressStyle({borderColor: "#059669", borderWidth: "2px"});
-      setStandardStyle({borderColor: "#D1D5DB", borderWidth: ""});
+    if(standardStyle.borderColor == GRAY_300 && expressStyle.borderColor == GRAY_300){
+      setExpressStyle({borderColor: GREEN_600, borderWidth: "2px"});
+    } else if (standardStyle.borderColor == GRAY_300 && expressStyle.borderColor == GREEN_600) {
+      setExpressStyle({borderColor: GRAY_300, borderWidth: ""});
+    } else if (standardStyle.borderColor == GREEN_600 && expressStyle.borderColor == GRAY_300) {
+      setExpressStyle({borderColor: GREEN_600, borderWidth: "2px"});
+      setStandardStyle({borderColor: GRAY_300, borderWidth: ""});
     }
   }
 
