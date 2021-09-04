@@ -7,8 +7,8 @@ const Index = () => {
   const GREEN_600 = "#059669";
   const GRAY_300 = "#D1D5DB";
 
-  const standard = {borderColor: GRAY_300, borderWidth: ""}; 
-  const express = {borderColor: GRAY_300, borderWidth: ""}; 
+  const standard = { borderColor: GRAY_300, borderWidth: "" };
+  const express = { borderColor: GRAY_300, borderWidth: "" };
 
   const [standardStyle, setStandardStyle] = useState(standard);
   const [expressStyle, setExpressStyle] = useState(express);
@@ -17,32 +17,32 @@ const Index = () => {
   const toggleStandard = (e) => {
     e.preventDefault();
     console.log(e)
-    if(standardStyle.borderColor == GRAY_300 && expressStyle.borderColor == GRAY_300){
-      setStandardStyle({borderColor: GREEN_600, borderWidth: "2px"});
+    if (standardStyle.borderColor == GRAY_300 && expressStyle.borderColor == GRAY_300) {
+      setStandardStyle({ borderColor: GREEN_600, borderWidth: "2px" });
     } else if (standardStyle.borderColor == GREEN_600 && expressStyle.borderColor == GRAY_300) {
-      setStandardStyle({borderColor: GRAY_300, borderWidth: ""});
+      setStandardStyle({ borderColor: GRAY_300, borderWidth: "" });
     } else if (standardStyle.borderColor == GRAY_300 && expressStyle.borderColor == GREEN_600) {
-      setStandardStyle({borderColor: GREEN_600, borderWidth: "2px"});
-      setExpressStyle({borderColor: GRAY_300, borderWidth: ""});
+      setStandardStyle({ borderColor: GREEN_600, borderWidth: "2px" });
+      setExpressStyle({ borderColor: GRAY_300, borderWidth: "" });
     }
   }
 
   const toggleExpress = (e) => {
     e.preventDefault();
     console.log(e)
-    if(standardStyle.borderColor == GRAY_300 && expressStyle.borderColor == GRAY_300){
-      setExpressStyle({borderColor: GREEN_600, borderWidth: "2px"});
+    if (standardStyle.borderColor == GRAY_300 && expressStyle.borderColor == GRAY_300) {
+      setExpressStyle({ borderColor: GREEN_600, borderWidth: "2px" });
     } else if (standardStyle.borderColor == GRAY_300 && expressStyle.borderColor == GREEN_600) {
-      setExpressStyle({borderColor: GRAY_300, borderWidth: ""});
+      setExpressStyle({ borderColor: GRAY_300, borderWidth: "" });
     } else if (standardStyle.borderColor == GREEN_600 && expressStyle.borderColor == GRAY_300) {
-      setExpressStyle({borderColor: GREEN_600, borderWidth: "2px"});
-      setStandardStyle({borderColor: GRAY_300, borderWidth: ""});
+      setExpressStyle({ borderColor: GREEN_600, borderWidth: "2px" });
+      setStandardStyle({ borderColor: GRAY_300, borderWidth: "" });
     }
   }
 
   return (
     <div class="mt-24">
-      <div className="border border-gray-200 bg-gray-200 flex flex-col md:flex md:flex-row max-w-screen-xl mx-auto rounded-md">
+      <div className="border border-gray-200 bg-gray-50 flex flex-col md:flex md:flex-row max-w-screen-xl mx-auto rounded-md">
         <div className="md:w-1/2 m-7">
           {/****************************************** LEFT COLUMN ******************************************/}
           <div className="flex flex-col md:flex md:flex-col">
@@ -57,7 +57,7 @@ const Index = () => {
                   </label>
                   <input className="p-1 w-full mt-1 focus:ring-gray-400 focus:border-gray-400 block border border-gray-300 rounded-md" name="email" id="email" type="email" />
                 </div>
-                <hr className="my-5" />
+                <hr className="my-5 " />
                 <span>
                   <h2 className="font-medium text-lg text-gray-800 mb-5">Shipping information</h2>
                 </span>
@@ -138,10 +138,10 @@ const Index = () => {
                 </span>
                 <ul className="grid grid-rows-1 grid-flow-col gap-4">
                   <li>
-                    <button onClick={e => toggleStandard(e)} style={{borderColor: standardStyle.borderColor, borderWidth: standardStyle.borderWidth}} className="border border-gray-300 bg-white rounded-md p-3 text-left w-full group">
+                    <button onClick={e => toggleStandard(e)} style={{ borderColor: standardStyle.borderColor, borderWidth: standardStyle.borderWidth }} className="border border-gray-300 bg-white rounded-md p-3 text-left w-full group">
                       <ul>
                         <li className="block text-gray-700 text-sm font-semibold flex justify-between">Standard
-                          <CheckCircleIcon className="w-5 h-5"  style={{color: standardStyle.borderColor}} />
+                          <CheckCircleIcon className="w-5 h-5" style={{ color: standardStyle.borderColor }} />
                         </li>
                         <li className="block text-gray-500 text-sm font-normal">4-10 business days</li>
                         <li className="mt-4 text-gray-700 text-sm font-semibold">$5.00</li>
@@ -149,10 +149,10 @@ const Index = () => {
                     </button>
                   </li>
                   <li>
-                    <button onClick={e => toggleExpress(e)} style={{borderColor: expressStyle.borderColor, borderWidth: expressStyle.borderWidth}} className="border border-gray-300 bg-white rounded-md p-3 text-left w-full group">
+                    <button onClick={e => toggleExpress(e)} style={{ borderColor: expressStyle.borderColor, borderWidth: expressStyle.borderWidth }} className="border border-gray-300 bg-white rounded-md p-3 text-left w-full group">
                       <ul>
                         <li className="block text-gray-700 text-sm font-semibold flex justify-between">Express
-                          <CheckCircleIcon className="w-5 h-5"  style={{color: expressStyle.borderColor}} />
+                          <CheckCircleIcon className="w-5 h-5" style={{ color: expressStyle.borderColor }} />
                         </li>
                         <li className="block text-gray-500 text-sm font-normal">2-5 business days</li>
                         <li className="mt-4 text-gray-700 text-sm font-semibold">$16.00</li>
@@ -164,26 +164,58 @@ const Index = () => {
               <hr className="bg-green-500 my-10" />
               <div>
                 <span>
-                  <h2 className="font-medium text-lg text-gray-800">Payment</h2>
+                  <h2 className="font-medium text-lg text-gray-800 pb-3">Payment</h2>
                   <div>
-                    <ul className="flex">
+                    <ul className="flex pb-5">
                       <li className="mr-8">
                         <label className="text-gray-700 text-sm font-semibold ">
-                          <input className="border-transparent focus:ring-0 form-radio text-green-500" type="radio" name="radio-direct" value="credit" />
+                          <input className="border-gray-300 focus:ring-0 form-radio text-green-500" type="radio" name="radio-direct" value="credit" />
                           <span class="ml-2">Credit Card</span>
                         </label>
                       </li>
                       <li className="mr-8">
                         <label className="text-gray-700 text-sm font-semibold ">
-                          <input className="border-transparent focus:ring-0 form-radio text-green-500" type="radio" name="radio-direct" value="paypal" />
+                          <input className="border-gray-300 focus:ring-0 form-radio text-green-500" type="radio" name="radio-direct" value="paypal" />
                           <span class="ml-2">PayPal</span>
                         </label>
                       </li>
                       <li className="mr-8">
                         <label className="text-gray-700 text-sm font-semibold ">
-                          <input className="border-transparent focus:ring-0 form-radio text-green-500" type="radio" name="radio-direct" value="etransfer" />
+                          <input className="border-gray-300 focus:ring-0 form-radio text-green-500" type="radio" name="radio-direct" value="etransfer" />
                           <span class="ml-2">eTransfer</span>
                         </label>
+                      </li>
+                    </ul>
+                    <ul>
+                      <li>
+                        <div className="pb-5">
+                          <label forHtml="cardNumber" className="block text-gray-700 text-sm font-semibold mb-2">
+                            Card Number
+                          </label>
+                          <input className="p-1 w-full mt-1 focus:ring-gray-400 focus:border-gray-400 block border border-gray-300 rounded-md" name="cardNumber" id="cardNumber" type="text" />
+                        </div>
+                      </li>
+                      <li>
+                        <div className="pb-5">
+                          <label forHtml="address" className="block text-gray-700 text-sm font-semibold mb-2">
+                            Name on card
+                          </label>
+                          <input className="p-1 w-full mt-1 focus:ring-gray-400 focus:border-gray-400 block border border-gray-300 rounded-md" name="cardName" id="cardName" type="text" />
+                        </div>
+                      </li>
+                      <li className="flex">
+                        <div className="pb-5 w-3/4 pr-3">
+                          <label forHtml="address" className="block text-gray-700 text-sm font-semibold mb-2">
+                            Expiration data (MM/YY)
+                          </label>
+                          <input className="p-1 w-full mt-1 focus:ring-gray-400 focus:border-gray-400 block border border-gray-300 rounded-md" name="expirationDate" id="expirationDate" type="text" />
+                        </div>
+                        <div className="pb-5 w-1/4">
+                          <label forHtml="address" className="block text-gray-700 text-sm font-semibold mb-2">
+                            CVC
+                          </label>
+                          <input className="p-1 w-full mt-1 focus:ring-gray-400 focus:border-gray-400 block border border-gray-300 rounded-md" name="cvc" id="cvc" type="text" />
+                        </div>
                       </li>
                     </ul>
                   </div>
